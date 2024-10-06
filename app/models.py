@@ -1,3 +1,7 @@
+"""
+    Database Models for the Website
+"""
+
 from flask_mysqldb import MySQL
 
 class College:
@@ -23,13 +27,14 @@ class Program:
     def delete(self, *args, **kwargs):
         pass 
 
+
 class Student:
     def __init__(self, *args, **kwargs):
         id_number = kwargs["id_number"]
         
         last_name = kwargs["last_name"]
         first_name = kwargs["first_name"] 
-        middle_name = kwargs["middle_name"] or None
+        middle_name = kwargs["middle_name"] or None # set to null
         
         program = kwargs["program"] or None
         
